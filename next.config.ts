@@ -13,6 +13,11 @@ const nextConfig: NextConfig = {
         hostname: "sociial.vercel.app",
         pathname: "/hero-light.png",
       },
+      {
+        protocol: "https",
+        hostname: "cdn.buymeacoffee.com",
+        pathname: "/buttons/v2/default-yellow.png"
+      }
     ],
   },
 };

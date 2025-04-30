@@ -4,6 +4,7 @@ import type React from "react";
 
 import Link from "next/link";
 import { Github, Linkedin, Twitter, Heart, Mail, MapPin } from "lucide-react";
+import Image from "next/image";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -128,22 +129,27 @@ export default function Footer() {
             </nav>
           </div>
 
-          <div className="space-y-4">
-            <h3 className="text-lg font-bold">Connect</h3>
-            <div className="flex space-x-4">
-              {socialLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2 rounded-full bg-muted hover:bg-muted/80 transition-colors"
-                  aria-label={link.name}
-                >
-                  {link.icon}
-                </Link>
-              ))}
+          <div className="flex flex-col justify-between gap-4">
+            <div className="space-y-4">
+              <h3 className="text-lg font-bold">Connect</h3>
+              <div className="flex space-x-4">
+                {socialLinks.map((link) => (
+                  <Link
+                    key={link.name}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 rounded-full bg-muted hover:bg-muted/80 transition-colors"
+                    aria-label={link.name}
+                  >
+                    {link.icon}
+                  </Link>
+                ))}
+              </div>
             </div>
+            <a href="https://www.buymeacoffee.com/sethshivam11" target="_blank">
+              <Image alt="Buy Me a Coffee" width="150" height="40" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" />
+            </a>
           </div>
         </div>
 
