@@ -97,7 +97,7 @@ export default function Projects() {
     {
       name: "moviesandtv",
       image:
-        "https://res.cloudinary.com/dv3qbj0bn/image/upload/v1744524954/portfolio/yfxb4crtpv9efxsgvz6z.png",
+        "https://res.cloudinary.com/dv3qbj0bn/image/upload/v1744524954/portfolio/akz8easku4zy45g5llji.png",
       repository: "https://github.com/sethshivam11/moviesandtv",
     },
     {
@@ -169,7 +169,7 @@ export default function Projects() {
     {
       name: "webrtc-video-chat",
       image:
-        "https://res.cloudinary.com/dv3qbj0bn/image/upload/v1744524944/portfolio/hweoqgwimtysybgw51wk.avif",
+        "https://res.cloudinary.com/dv3qbj0bn/image/upload/v1746718456/portfolio/hj7rc22xuyww2i3ohjzk.avif",
       repository: "https://github.com/sethshivam11/webrtc-video-chat",
     },
     {
