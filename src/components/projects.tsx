@@ -50,6 +50,7 @@ export default function Projects() {
     "sethshivam11",
     "sda",
     "razorpay-ui",
+    "todo-list"
   ];
   const images = [
     {
@@ -66,7 +67,8 @@ export default function Projects() {
     },
     {
       name: "lastminprep",
-      image: "https://lastminprep.vercel.app/screenshots/home.png",
+      image:
+        "https://github.com/sethshivam11/lastminprep/raw/main/public/screenshots/home.png",
       repository: "https://github.com/sethshivam11/lastminprep",
     },
     {
@@ -173,7 +175,8 @@ export default function Projects() {
     },
     {
       name: "sociial",
-      image: "https://sociial.vercel.app/hero-light.png",
+      image:
+        "https://github.com/sethshivam11/sociial/raw/main/public/hero-light.png",
       repository: "https://github.com/sethshivam11/sociial",
     },
     {
@@ -182,6 +185,29 @@ export default function Projects() {
         "https://res.cloudinary.com/dv3qbj0bn/image/upload/v1744526839/portfolio/kjvynyx5rkrngx4hvw7w.png",
       repository: "https://github.com/sethshivam11/todo",
     },
+    {
+      name: "camera",
+      image:
+        "https://github.com/sethshivam11/camera/raw/main/src/assets/images/camera.jpg",
+      repository: "https://github.com/sethshivam11/camera",
+    },
+    {
+      name: "tasks",
+      image:
+        "https://github.com/sethshivam11/tasks/raw/main/src/assets/images/home-page.jpg",
+      repository: "https://github.com/sethshivam11/tasks",
+    },
+    {
+      name: "calculator",
+      image:
+        "https://github.com/sethshivam11/calculator/raw/main/assets/images/calculator.jpg",
+      repository: "https://github.com/sethshivam11/calculator",
+    },
+    {
+      name: "abcd-pro",
+      image: "https://res.cloudinary.com/dv3qbj0bn/image/upload/v1755412745/Screenshot_2025-08-17_120716_ne0xi9.png",
+      repository: "https://github.com/sethshivam11/abcd-pro",
+    }
   ];
 
   useEffect(() => {

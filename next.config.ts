@@ -10,13 +10,8 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
-        hostname: "sociial.vercel.app",
-        pathname: "/hero-light.png",
-      },
-      {
-        protocol: "https",
-        hostname: "lastminprep.vercel.app",
-        pathname: "/screenshots/home.png",
+        hostname: "github.com",
+        pathname: "/sethshivam11/**"
       },
       {
         protocol: "https",
