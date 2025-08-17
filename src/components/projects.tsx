@@ -2,19 +2,11 @@
 
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Github, ExternalLink, Loader2 } from "lucide-react";
-import Image from "next/image";
+import { Github, Loader2 } from "lucide-react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import ProjectCard from "./project-card";
 
-interface Repository {
+export interface Repository {
   id: number;
   name: string;
   description: string;
@@ -50,7 +42,7 @@ export default function Projects() {
     "sethshivam11",
     "sda",
     "razorpay-ui",
-    "todo-list"
+    "todo-list",
   ];
   const images = [
     {
@@ -205,9 +197,10 @@ export default function Projects() {
     },
     {
       name: "abcd-pro",
-      image: "https://res.cloudinary.com/dv3qbj0bn/image/upload/v1755412745/Screenshot_2025-08-17_120716_ne0xi9.png",
+      image:
+        "https://res.cloudinary.com/dv3qbj0bn/image/upload/v1755412745/Screenshot_2025-08-17_120716_ne0xi9.png",
       repository: "https://github.com/sethshivam11/abcd-pro",
-    }
+    },
   ];
 
   useEffect(() => {
@@ -274,18 +267,6 @@ export default function Projects() {
     setVisibleProjects((prev) => Math.min(prev + 3, projects.length));
   };
 
-  const getProjectImage = (name: string) => {
-    let image = `/placeholder.svg?height=400&width=600&text=${encodeURIComponent(
-      name
-    )}`;
-    images.map((ele) => {
-      if (ele.name === name) {
-        image = ele.image;
-      }
-    });
-    return image;
-  };
-
   return (
     <section id="projects" className="py-20 border-t">
       <div className="container px-4 md:px-6">
@@ -320,77 +301,12 @@ export default function Projects() {
           <>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-background">
               {projects.slice(0, visibleProjects).map((project, index) => (
-                <motion.div
-                  key={project.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  <Card className="h-full flex flex-col">
-                    <CardHeader>
-                      <CardTitle className="capitalize text-center text-xl">
-                        {project.name.replace(/-/g, " ")}
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent className="flex-grow">
-                      <div className="relative aspect-video overflow-hidden rounded-md mb-4">
-                        <Image
-                          src={getProjectImage(project.name)}
-                          alt={project.name}
-                          fill
-                          className="object-cover object-top transition-transform hover:scale-105"
-                        />
-                      </div>
-                      <p className="text-muted-foreground line-clamp-3">
-                        {project.description}
-                      </p>
-                      <div className="flex space-between items-center w-full mt-4">
-                        <div>
-                          {project.topics &&
-                            project.topics.slice(0, 2).map((topic) => (
-                              <span
-                                key={topic}
-                                className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-muted text-muted-foreground mr-2"
-                              >
-                                {topic}
-                              </span>
-                            ))}
-                        </div>
-
-                        {project.language && (
-                          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary/10 text-primary mr-2">
-                            {project.language}
-                          </span>
-                        )}
-                      </div>
-                    </CardContent>
-                    <CardFooter className="flex justify-between pt-2">
-                      <Button variant="outline" size="sm" asChild>
-                        <Link
-                          href={project.html_url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <Github className="mr-2 h-4 w-4" />
-                          Code
-                        </Link>
-                      </Button>
-                      {project.homepage && (
-                        <Button size="sm" asChild>
-                          <Link
-                            href={project.homepage}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            <ExternalLink className="mr-2 h-4 w-4" />
-                            Demo
-                          </Link>
-                        </Button>
-                      )}
-                    </CardFooter>
-                  </Card>
-                </motion.div>
+                <ProjectCard
+                  project={project}
+                  images={images}
+                  index={index}
+                  key={index}
+                />
               ))}
             </div>
 
