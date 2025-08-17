@@ -68,7 +68,7 @@ function ProjectCard({
             <div>
               {project.topics &&
                 project.topics.slice(0, 2).map((topic, index) => (
-                  <Badge variant="secondary" key={index}>
+                  <Badge variant="secondary" className="mr-2" key={index}>
                     {topic}
                   </Badge>
                 ))}

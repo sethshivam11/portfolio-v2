@@ -16,6 +16,7 @@ import {
 import { Send, Mail, MapPin, Loader2 } from "lucide-react";
 import { toast } from "sonner";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -64,8 +65,16 @@ export default function Contact() {
   };
 
   const contactInfo = [
-    { icon: <Mail className="h-5 w-5" />, text: "legendshivam11@gmail.com" },
-    { icon: <MapPin className="h-5 w-5" />, text: "India" },
+    {
+      icon: <Mail className="h-5 w-5" />,
+      text: "legendshivam11@gmail.com",
+      href: "mailto:legendshivam11@gmail.com",
+    },
+    {
+      icon: <MapPin className="h-5 w-5" />,
+      text: "India",
+      href: "https://google.com/maps/place/India",
+    },
   ];
 
   return (
@@ -82,13 +91,15 @@ export default function Contact() {
 
           <div className="flex flex-wrap justify-center gap-3 mt-6">
             {contactInfo.map((item, index) => (
-              <div
+              <Link
+                href={item.href}
                 key={index}
                 className="flex items-center gap-2 bg-card px-4 py-2 rounded-full border"
+                target="_blank"
               >
                 {item.icon}
                 <span>{item.text}</span>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

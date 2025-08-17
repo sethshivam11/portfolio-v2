@@ -38,7 +38,7 @@ export default function Footer() {
       icon: <MapPin className="h-5 w-5 text-primary" />,
       title: "Location",
       value: "India",
-      link: null,
+      link: "https://google.com/maps/place/India",
     },
   ];
 
@@ -72,16 +72,13 @@ export default function Footer() {
                   <div className="mt-0.5">{item.icon}</div>
                   <div>
                     <h3 className="font-medium">{item.title}</h3>
-                    {item.link ? (
-                      <a
-                        href={item.link}
-                        className="text-muted-foreground hover:text-primary transition-colors"
-                      >
-                        {item.value}
-                      </a>
-                    ) : (
-                      <p className="text-muted-foreground">{item.value}</p>
-                    )}
+                    <Link
+                      href={item.link}
+                      className="text-muted-foreground hover:text-primary transition-colors"
+                      target="_blank"
+                    >
+                      {item.value}
+                    </Link>
                   </div>
                 </div>
               ))}
@@ -148,7 +145,12 @@ export default function Footer() {
               </div>
             </div>
             <a href="https://www.buymeacoffee.com/sethshivam11" target="_blank">
-              <Image alt="Buy Me a Coffee" width="150" height="40" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" />
+              <Image
+                src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
+                alt="Buy Me a Coffee"
+                width="150"
+                height="40"
+              />
             </a>
           </div>
         </div>

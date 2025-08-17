@@ -4,7 +4,7 @@ import type React from "react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowDown, Github, Linkedin, Twitter } from "lucide-react";
+import { ArrowDown, Github, Linkedin, Mail, Twitter } from "lucide-react";
 import HighlightedLine from "./highlighted-line";
 
 export default function Hero() {
@@ -38,7 +38,13 @@ export default function Hero() {
       url: "https://twitter.com/sethshivam11",
       icon: <Twitter className="h-5 w-5" />,
     },
+    {
+      name: "Mail",
+      url: "mailto:legendshivam11@gmail.com",
+      icon: <Mail className="h-5 w-5" />,
+    },
   ];
+  const resume = process.env.NEXT_PUBLIC_RESUME_URL || null;
 
   return (
     <section
@@ -104,10 +110,13 @@ export default function Hero() {
               </Button>
               <Button asChild variant="outline" size="lg">
                 <Link
-                  href="#contact"
-                  onClick={(e) => scrollToSection(e, "contact")}
+                  href={resume ?? "#contact"}
+                  target={resume ? "_blank" : "_self"}
+                  onClick={(e) =>
+                    resume ? null : scrollToSection(e, "contact")
+                  }
                 >
-                  Get In Touch
+                  {resume ? "Get Resume" : "Get in Touch"}
                 </Link>
               </Button>
             </motion.div>
@@ -116,7 +125,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.6 }}
-              className="flex space-x-4"
+              className="flex space-x-4 max-sm:justify-center"
             >
               {socialLinks.map((link) => (
                 <Link
