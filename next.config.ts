@@ -15,9 +15,14 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
+        hostname: "lastminprep.vercel.app",
+        pathname: "/screenshots/home.png",
+      },
+      {
+        protocol: "https",
         hostname: "cdn.buymeacoffee.com",
         pathname: "/buttons/v2/default-yellow.png"
-      }
+      },
     ],
   },
 };

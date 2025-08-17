@@ -34,9 +34,9 @@ export default function Projects() {
 
   const pinnedRepos = [
     "sociial",
+    "lastminprep",
     "campus-space",
     "gadget-store",
-    "workconnect",
   ];
   const excludedRepos = [
     "portfolio",
@@ -66,8 +66,7 @@ export default function Projects() {
     },
     {
       name: "lastminprep",
-      image:
-        "https://res.cloudinary.com/dv3qbj0bn/image/upload/v1744524950/portfolio/flpynnm1drt3dagnumff.png",
+      image: "https://lastminprep.vercel.app/screenshots/home.png",
       repository: "https://github.com/sethshivam11/lastminprep",
     },
     {
