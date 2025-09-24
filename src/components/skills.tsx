@@ -7,7 +7,7 @@ import { Layout, Server, Cog } from "lucide-react";
 export default function Skills() {
   const skillCategories = [
     {
-      title: "Frontend",
+      title: "Frontend & Languages",
       icon: <Layout className="h-10 w-10 mb-3 text-primary" />,
       skills: [
         {
@@ -31,8 +31,16 @@ export default function Skills() {
           icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
         },
         {
+          name: "React Native",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/reactnative/reactnative-original.svg",
+        },
+        {
           name: "React Router",
           icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/reactrouter/reactrouter-original.svg",
+        },
+        {
+          name: "Expo",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/expo/expo-original.svg",
         },
         {
           name: "Next JS",
@@ -118,8 +126,8 @@ export default function Skills() {
             My Skills
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl">
-            I&apos;ve worked with a variety of technologies and frameworks to create
-            robust and scalable applications.
+            I&apos;ve worked with a variety of technologies and frameworks to
+            create robust and scalable applications.
           </p>
         </div>
 

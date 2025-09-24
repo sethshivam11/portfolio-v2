@@ -35,7 +35,9 @@ function ImageDialog({
           alt={name}
           draggable={false}
           fill
-          className="object-cover select-none object-top transition-transform hover:scale-105 cursor-pointer"
+          className={`${
+            topics?.includes("react-native") ? "object-contain" : "object-cover"
+          } select-none object-top transition-transform hover:scale-105 cursor-pointer`}
         />
       </DialogTrigger>
       <DialogContent className="sm:max-w-7xl sm:w-3xl w-full">

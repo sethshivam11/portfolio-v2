@@ -29,6 +29,8 @@ export default function Projects() {
     "lastminprep",
     "campus-space",
     "gadget-store",
+    "workconnect",
+    "school-finder",
   ];
   const excludedRepos = [
     "portfolio",
@@ -43,6 +45,7 @@ export default function Projects() {
     "sda",
     "razorpay-ui",
     "todo-list",
+    "sudoku",
   ];
   const images = [
     {
@@ -200,6 +203,18 @@ export default function Projects() {
       image:
         "https://res.cloudinary.com/dv3qbj0bn/image/upload/v1755412745/Screenshot_2025-08-17_120716_ne0xi9.png",
       repository: "https://github.com/sethshivam11/abcd-pro",
+    },
+    {
+      name: "school-finder",
+      image:
+        "https://github.com/sethshivam11/school-finder/blob/main/screenshot.png?raw=true",
+      repository: "https://github.com/sethshivam11/school-finder",
+    },
+    {
+      name: "panchang-calendar",
+      image:
+        "https://github.com/sethshivam11/panchang-calendar/blob/main/screenshot.png?raw=true",
+      repository: "https://github.com/sethshivam11/panchang-calendar",
     },
   ];
 
