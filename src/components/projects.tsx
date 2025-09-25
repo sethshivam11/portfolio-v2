@@ -20,7 +20,7 @@ export interface Repository {
 
 export default function Projects() {
   const [projects, setProjects] = useState<Repository[]>([]);
-  const [visibleProjects, setVisibleProjects] = useState<number>(3);
+  const [visibleProjects, setVisibleProjects] = useState<number>(6);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -29,8 +29,8 @@ export default function Projects() {
     "lastminprep",
     "campus-space",
     "gadget-store",
-    "workconnect",
     "school-finder",
+    "restmate",
   ];
   const excludedRepos = [
     "portfolio",
@@ -215,6 +215,12 @@ export default function Projects() {
       image:
         "https://github.com/sethshivam11/panchang-calendar/blob/main/screenshot.png?raw=true",
       repository: "https://github.com/sethshivam11/panchang-calendar",
+    },
+    {
+      name: "restmate",
+      image:
+        "https://github.com/sethshivam11/restmate/raw/main/public/screenshot.png",
+      repository: "https://github.com/sethshivam11/restmate",
     },
   ];
 

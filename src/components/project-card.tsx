@@ -24,9 +24,7 @@ function ProjectCard({
   index: number;
 }) {
   const getProjectImage = (name: string) => {
-    let image = `/placeholder.svg?height=400&width=600&text=${encodeURIComponent(
-      name
-    )}`;
+    let image = `https://github.com/sethshivam11/${name}/raw/main/public/screenshot.png`;
     images.map((ele) => {
       if (ele.name === name) {
         image = ele.image;
@@ -34,6 +32,7 @@ function ProjectCard({
     });
     return image;
   };
+
   return (
     <motion.div
       key={project.id}

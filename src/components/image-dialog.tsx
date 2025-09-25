@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import {
   Dialog,
   DialogClose,
@@ -27,17 +29,22 @@ function ImageDialog({
   topics?: string[];
   language?: string;
 }) {
+  const [imageError, setImageError] = useState(false);
+
   return (
     <Dialog>
       <DialogTrigger asChild>
         <Image
-          src={src}
+          src={imageError ? "/placeholder.svg?height=400&width=600" : src}
           alt={name}
           draggable={false}
           fill
+          onError={() => setImageError(true)}
           className={`${
             topics?.includes("react-native") ? "object-contain" : "object-cover"
-          } select-none object-top transition-transform hover:scale-105 cursor-pointer`}
+          } select-none ${
+            imageError ? "object-center" : "object-top"
+          } transition-transform hover:scale-105 cursor-pointer`}
         />
       </DialogTrigger>
       <DialogContent className="sm:max-w-7xl sm:w-3xl w-full">
@@ -47,11 +54,14 @@ function ImageDialog({
           </DialogTitle>
           <DialogDescription>
             <Image
-              src={src}
+              src={imageError ? "/placeholder.svg?height=400&width=600" : src}
               alt={name}
-              className="object-contain mx-auto rounded-md max-h-[50vh]"
-              width="1024"
-              height="1024"
+              className={`${
+                imageError ? "object-cover" : "object-contain"
+              } mx-auto rounded-md max-h-[50vh]`}
+              width={1024}
+              height={1024}
+              onError={() => setImageError(true)}
             />
           </DialogDescription>
           <p className="text-muted-foreground text-sm max-sm:text-left">
